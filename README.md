@@ -6,7 +6,7 @@ A simple library that helps to never forget unimplemented parts of the applicati
 
 Add the Composer package to your project using the following command:
 
-```shell
+```bash
 composer require osmianski/not-implemented
 ```
 
@@ -14,10 +14,12 @@ composer require osmianski/not-implemented
 
 Have you even forgotten to return to a comment like this one?
 
-    function foo(?Bar $bar): void {
-        // TODO: handle nulls
-        ...
-    }
+```php
+function foo(?Bar $bar): void {
+    // TODO: handle nulls
+    ...
+}
+```
 
 Previously, I had those, too.
 
@@ -25,16 +27,18 @@ Not anymore.
 
 I found that throwing the [`NotImplemented`](src/Exceptions/NotImplemented.php) exception instead of a mere comment makes you to pay off this bit of technical debt right away:
 
-    use Osmianski\Exceptions\NotImplemented;
-    ...
-    
-    function foo(?Bar $bar): void {
-        if (!$bar) {
-            throw new NotImplemented();        
-        }
-        
-        ...
+```php
+use Osmianski\Exceptions\NotImplemented;
+...
+
+function foo(?Bar $bar): void {
+    if (!$bar) {
+        throw new NotImplemented();        
     }
+    
+    ...
+}
+```
 
 Only recently, I have found a really nice feature in PhpStorm called *Exception Breakpoints*. The idea is that whenever a specified exception is thrown, the debugger stops at the line that throws the exception.
 
