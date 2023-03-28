@@ -10,7 +10,7 @@
         }
     ],
     "homepage": "https://github.com/osmianski/not-implemented",
-    "keywords": ["Laravel", "NotImplemented"],
+    "keywords": ["NotImplemented"],
     "require": {
         "php": ">=8.1"
     },
