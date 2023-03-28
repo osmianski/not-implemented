@@ -1,6 +1,6 @@
 {
     "name": "osmianski/not-implemented",
-    "description": "",
+    "description": "A simple library that helps to never forget unimplemented parts of the application.",
     "license": "MIT",
     "authors": [
         {
